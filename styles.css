@@ -1,0 +1,233 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Sawarabi Mincho', serif;
+    background: url('sky.webp') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+}
+
+.app-container {
+    background-color: rgba(255, 255, 255, 0.85); /* Light overlay */
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    padding: 20px 0;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+header h1 {
+    font-weight: normal;
+    color: #b03a2e; /* Traditional deep red */
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#city-input {
+    width: 300px;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 2px solid #b03a2e;
+    border-radius: 0;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#city-input:focus {
+    border-color: #922b21;
+}
+
+#search-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    margin-left: 10px;
+    border: 2px solid #b03a2e;
+    border-radius: 0;
+    background-color: #b03a2e;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+#search-btn i {
+    margin-right: 8px;
+}
+
+#search-btn:hover {
+    background-color: #922b21;
+    border-color: #922b21;
+    transform: scale(1.05);
+}
+
+/* Loading Spinner */
+#loading-spinner {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#loading-spinner.hidden {
+    display: none;
+}
+
+#loading-spinner i {
+    font-size: 48px;
+    color: #b03a2e;
+}
+
+/* Weather Container */
+#weather-container {
+    position: relative;
+    min-height: 600px;
+    padding: 20px;
+}
+
+/* Weather Card */
+.weather-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    width: 320px;
+    margin: 15px;
+    padding: 20px;
+    border: 2px solid #b03a2e;
+    position: absolute;
+    cursor: move;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+}
+
+.weather-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.weather-card.dragging {
+    opacity: 0.8;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.weather-card h2 {
+    margin-bottom: 15px;
+    color: #b03a2e;
+    font-weight: normal;
+}
+
+.city-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border: 2px solid #b03a2e;
+    margin-bottom: 15px;
+}
+
+.weather-details {
+    display: flex;
+    align-items: center;
+}
+
+.weather-icon {
+    font-size: 80px;
+    margin-right: 15px;
+    color: #b03a2e;
+}
+
+.weather-info p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.weather-info p strong {
+    color: #b03a2e;
+}
+
+.weather-info p i {
+    color: #b03a2e;
+    margin-right: 8px;
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #e74c3c;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.close-btn:hover {
+    color: #c0392b;
+    transform: scale(1.2);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #666;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+footer a {
+    color: #b03a2e;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .search-container {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    #city-input,
+    #search-btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .weather-card {
+        width: calc(100% - 40px);
+        position: relative;
+        margin: 15px 20px;
+    }
+
+    #weather-container {
+        min-height: auto;
+    }
+}

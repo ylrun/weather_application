@@ -1,0 +1,55 @@
+<head>
+    <meta charset="UTF-8">
+    <title>City Weather App</title>
+    <!-- Fonts and Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho&display=swap"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Weather Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css">
+  </head>  
+<body>
+    <div class="app-container">
+        <header>
+            <h1>City Weather App</h1>
+        </header>
+        <main>
+            <div class="search-container">
+                <input type="text" id="city-input" placeholder="Enter city name">
+                <button id="search-btn"><i class="fas fa-plus"></i> Add City</button>
+            </div>
+            <!-- Loading Spinner -->
+            <div id="loading-spinner" class="hidden">
+                <i class="fas fa-spinner fa-spin"></i>
+            </div>
+            <div id="weather-container"></div>
+        </main>
+        <footer>
+            <p class="attribution">Images provided by <a href="https://pixabay.com/">Pixabay</a></p>
+        </footer>
+    </div>
+    <!-- Include interact.js library -->
+    <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+
+
+
+
